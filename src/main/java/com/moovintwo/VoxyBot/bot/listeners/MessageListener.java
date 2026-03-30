@@ -18,8 +18,8 @@ public class MessageListener extends ListenerAdapter
     }
 
     @Override
-    public void onMessageReceived(MessageReceivedEvent event)
-    {
+    public void onMessageReceived(MessageReceivedEvent event) {
+        // Currently useless, but I'll use it later
         /*if (event.isFromType(ChannelType.PRIVATE))
         {
 

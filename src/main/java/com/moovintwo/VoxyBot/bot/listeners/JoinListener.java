@@ -16,9 +16,7 @@ public class JoinListener extends ListenerAdapter
 
     public JoinListener(Logger logger)
     {
-
         this.logger = logger;
-
     }
 
     @Override
@@ -26,10 +24,12 @@ public class JoinListener extends ListenerAdapter
 
         Random rand = new Random();
 
+        // Simplifies the strings into variables to use
         String logo = "<:voxarisforge:1488039474138185758>";
         String lineSeparator = System.lineSeparator();
         String welcomeFooter = logo + " **  Welcome to Voxaris Forge! ** " + logo;
 
+        // List of possible welcome messages
         ArrayList<String> welcomeMessages = new ArrayList<>();
         welcomeMessages.add("** has joined the Party! ** 🎉");
         welcomeMessages.add("** entered the Arena ** ⚔️");
@@ -40,6 +40,7 @@ public class JoinListener extends ListenerAdapter
             if (systemChannel != null) {
                 int randomInt = rand.nextInt(welcomeMessages.size());
                 String welcomeMessage = welcomeMessages.get(randomInt);
+                // Combines the strings and sends the message
                 systemChannel.sendMessage(welcomeFooter + lineSeparator + lineSeparator + event.getUser().getAsMention() + welcomeMessage).queue();
             }
         }

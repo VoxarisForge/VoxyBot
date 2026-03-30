@@ -7,6 +7,8 @@ import java.util.Properties;
 
 public class EnvReader {
 
+    // EnvReader is self-explanatory, it reads the .env file
+
     String bot_token;
 
     public void init() {

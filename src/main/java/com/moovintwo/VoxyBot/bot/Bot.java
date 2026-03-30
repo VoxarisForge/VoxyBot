@@ -15,13 +15,17 @@ import java.util.logging.Logger;
 
 public class Bot {
 
+    // The initial class for the bot to function
+
     public Bot(String name) throws InterruptedException {
 
         EnvReader envReader = new EnvReader();
         Logger logger = Logger.getLogger(name);
 
+        // Initializes the EnvReader
         envReader.init();
 
+        // Creates the Activity the bot will play
         BotActivity activity = new BotActivity("Minecraft", "Adding a Fish", Activity.ActivityType.PLAYING, true);
 
         JDA jda = JDABuilder.createDefault(envReader.getBotToken())
@@ -29,6 +33,7 @@ public class Bot {
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MEMBERS)
                 .build();
 
+        // Adds the listeners
         jda.addEventListener(new JoinListener(logger));
         jda.addEventListener(new MessageListener(logger));
         jda.addEventListener(new ReadyListener());

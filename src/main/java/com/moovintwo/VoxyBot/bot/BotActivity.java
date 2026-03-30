@@ -6,6 +6,8 @@ import net.dv8tion.jda.api.entities.emoji.EmojiUnion;
 
 public class BotActivity implements Activity {
 
+    // Makes it easier for me to make activities
+
     String name;
     String state;
     ActivityType activityType;

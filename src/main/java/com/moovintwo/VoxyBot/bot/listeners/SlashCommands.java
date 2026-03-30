@@ -12,6 +12,8 @@ import static net.dv8tion.jda.api.interactions.commands.OptionType.STRING;
 
 public class SlashCommands extends ListenerAdapter {
 
+    // Same thing with msg listener, actively no use for this
+
     public SlashCommands(CommandListUpdateAction commands) {
 
         /*commands.addCommands(Commands.slash("say", "Makes the bot say what you tell it to")
